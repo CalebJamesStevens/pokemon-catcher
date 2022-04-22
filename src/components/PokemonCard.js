@@ -12,7 +12,7 @@ function PokemonCard({ pokemon, setSelected, inventoryCard }) {
 
     return (
         <section className='pokemonCard__background'>
-            <div className='pokemonCard'>
+            <div className='pokemonCard popup'>
                 <div className='pokemonCard__nameContainer'>
                     <Conditional condition={inventoryCard}>
                         <p className='pokemonCard__givenName'>

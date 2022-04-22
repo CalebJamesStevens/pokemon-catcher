@@ -12,18 +12,6 @@
     border-radius: 5px;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
     padding: 1rem 1rem;
-    animation-name: popup;
-    animation-duration: 250ms;
-}
-
-@keyframes popup {
-    from {
-        transform: scale(0%);
-    }
-
-    to {
-        transform: scale(100%);
-    }
 }
 
 .catchingForm__nameInput {

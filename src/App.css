@@ -61,3 +61,18 @@ nav {
 .darkbg-link {
     text-decoration: underline;
 }
+
+.popup {
+    animation-name: popup;
+    animation-duration: 250ms;
+}
+
+@keyframes popup {
+    from {
+        transform: scale(0%);
+    }
+
+    to {
+        transform: scale(100%);
+    }
+}

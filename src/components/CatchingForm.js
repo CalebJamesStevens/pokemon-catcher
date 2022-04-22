@@ -19,7 +19,7 @@ function CatchingForm({ pokemon, setCatching }) {
 
     return (
         <form
-            className='catchingForm'
+            className='catchingForm popup'
             onSubmit={(e) => {
                 e.preventDefault();
                 handleSubmit();
