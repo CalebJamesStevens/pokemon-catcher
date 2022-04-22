@@ -1,0 +1,19 @@
+.pokemonTile {
+    text-transform: capitalize;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: gray 0.3rem solid;
+    border-radius: 10px;
+    width: 10rem;
+    height: 12rem;
+    transition: 250ms;
+}
+
+.pokemonTile:hover {
+    cursor: pointer;
+    border: white 0.3rem solid;
+    scale: 1.1;
+}

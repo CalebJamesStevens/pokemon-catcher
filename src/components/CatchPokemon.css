@@ -1,0 +1,24 @@
+.catchPokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.catchPokemon__pokemonTilesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+.catchPokemon__pokemonTilesContainerHeader {
+    text-align: center;
+    font-size: large;
+}
+
+.catchPokemon__pokemonTiles {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}

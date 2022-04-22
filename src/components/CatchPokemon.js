@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchRandomPokemon } from '../custom_modules/pokemonApi';
-import PokemonCard from './PokemonCard';
+import PokemonTile from './PokemonTile';
+import './CatchPokemon.css';
 
 function CatchPokemon() {
     const [availablePokemon, setAvailablePokemon] = useState(null);
@@ -16,19 +17,22 @@ function CatchPokemon() {
     }, []);
 
     return (
-        <main id='catch-pokemon-page'>
+        <main className='catchPokemon'>
             <h1 className='hidden'>Catch Pokemon Page</h1>
             <section
-                aria-labelledby='available-pokemon-container-header'
-                id='avaiable-pokemon-container'
+                aria-labelledby='catchPokemon__pokemonTilesContainerHeader'
+                className='catchPokemon__pokemonTilesContainer'
             >
-                <h2 id='available-pokemon-container-header'>
+                <h2
+                    className='catchPokemon__pokemonTilesContainerHeader'
+                    id='catchPokemon__pokemonTilesContainerHeader'
+                >
                     Here's some pokemon to catch! Get some!
                 </h2>
-                <ul className='avaiable-pokemon-list'>
+                <ul className='catchPokemon__pokemonTiles'>
                     {availablePokemon?.map((pokemon, index) => {
                         return (
-                            <PokemonCard
+                            <PokemonTile
                                 key={index}
                                 inventoryCard={false}
                                 pokemon={pokemon}

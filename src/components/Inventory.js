@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Conditional from '../utility_components/Conditional';
-import PokemonCard from './PokemonCard';
+import PokemonTile from './PokemonTile';
 
 function Inventory() {
     const { pokemonList } = useSelector((state) => state.pokemon);
@@ -24,7 +24,7 @@ function Inventory() {
                     <ul id='inventory-list'>
                         {pokemonList.map((pokemon) => {
                             return (
-                                <PokemonCard
+                                <PokemonTile
                                     key={Math.random()}
                                     inventoryCard={true}
                                     pokemon={pokemon}
