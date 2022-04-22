@@ -21,7 +21,7 @@ function Inventory() {
                         Go catch some more!
                     </Link>
 
-                    <ul className='inventory__pokemon'>
+                    <ul className='inventory__pokemonList'>
                         {pokemonList.map((pokemon) => {
                             return (
                                 <PokemonTile
