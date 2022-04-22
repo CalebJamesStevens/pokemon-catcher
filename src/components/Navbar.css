@@ -1,0 +1,29 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 3rem;
+    align-items: center;
+}
+
+@media (max-width: 750px) {
+    .navbar {
+        padding-inline: 2rem;
+    }
+}
+
+.navbar__title {
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.navbar__menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar__menuItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}

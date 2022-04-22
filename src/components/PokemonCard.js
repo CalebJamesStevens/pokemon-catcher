@@ -6,14 +6,7 @@ function PokemonCard({ pokemon, inventoryCard }) {
     const [selected, setSelected] = useState(false);
 
     return (
-        <li
-            onClick={() => {
-                setSelected(true);
-            }}
-            className='inventory-item'
-        >
-            <h3>{pokemon.name}</h3>
-            <img src={`${pokemon.sprites.front_default}`} />
+        <>
             <Conditional condition={selected}>
                 <DetailedPokemonCard
                     pokemon={pokemon}
@@ -21,7 +14,16 @@ function PokemonCard({ pokemon, inventoryCard }) {
                     setSelected={setSelected}
                 />
             </Conditional>
-        </li>
+            <li
+                onClick={() => {
+                    setSelected(true);
+                }}
+                className='inventory-item'
+            >
+                <h3>{pokemon.name}</h3>
+                <img src={`${pokemon.sprites.front_default}`} />
+            </li>
+        </>
     );
 }
 

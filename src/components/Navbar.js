@@ -1,0 +1,31 @@
+import { Link } from 'react-router-dom';
+import { MdOutlineInventory2, MdCatchingPokemon } from 'react-icons/md';
+import './Navbar.css';
+import { useWindowSize } from '../custom_hooks/useWinowSize';
+import Conditional from '../utility_components/Conditional';
+
+function Navbar() {
+    const [width, height] = useWindowSize();
+
+    return (
+        <nav className='navbar'>
+            <p className='navbar__title'>Pokemon Catcher</p>
+            <div className='navbar__menu'>
+                <Link className='navbar__menuItem' to='/'>
+                    <MdOutlineInventory2 size={40} />
+                    <Conditional condition={width > 750}>
+                        <p>Inventory</p>
+                    </Conditional>
+                </Link>
+                <Link className='navbar__menuItem' to='/catch-pokemon'>
+                    <MdCatchingPokemon size={40} />
+                    <Conditional condition={width > 750}>
+                        <p>Catch Pokemon!</p>
+                    </Conditional>
+                </Link>
+            </div>
+        </nav>
+    );
+}
+
+export default Navbar;
