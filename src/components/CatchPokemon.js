@@ -2,17 +2,20 @@ import { useEffect, useState } from 'react';
 import { fetchRandomPokemon } from '../custom_modules/pokemonApi';
 import PokemonTile from './PokemonTile';
 import './CatchPokemon.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { generate } from '../redux/wildPokemonSlice';
 
 function CatchPokemon() {
-    const [availablePokemon, setAvailablePokemon] = useState(null);
-
-    const fetchPokemon = async () => {
-        const p = await fetchRandomPokemon(10);
-        setAvailablePokemon(p);
-    };
+    const dispatch = useDispatch();
+    const { wildPokemonList } = useSelector((state) => state.wildPokemon);
 
     useEffect(() => {
-        if (availablePokemon) return;
+        if (wildPokemonList.length > 0) return;
+        const fetchPokemon = async () => {
+            const p = await fetchRandomPokemon(10);
+
+            dispatch(generate(p));
+        };
         fetchPokemon();
     }, []);
 
@@ -30,7 +33,7 @@ function CatchPokemon() {
                     Here's some pokemon to catch! Get some!
                 </h2>
                 <ul className='catchPokemon__pokemonTiles'>
-                    {availablePokemon?.map((pokemon, index) => {
+                    {wildPokemonList?.map((pokemon, index) => {
                         return (
                             <PokemonTile
                                 key={index}

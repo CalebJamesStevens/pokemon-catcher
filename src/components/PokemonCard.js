@@ -29,35 +29,35 @@ function PokemonCard({ pokemon, setSelected, inventoryCard }) {
                     {pokemon.types[0].type.name}
                     <Conditional condition={pokemon.types.length > 1}>
                         {' '}
-                        /{pokemon.types[1]?.type.name}
+                        / {pokemon.types[1]?.type.name}
                     </Conditional>
                 </p>
                 <p className='pokemonCard__statsHeader'>Stats</p>
                 <div className='pokemonCard__statsContainer'>
-                    <p className='pokemonCard__stat'>
+                    <div className='pokemonCard__stat'>
                         <div>HP</div>
                         <div>{pokemon.stats[0].base_stat}</div>
-                    </p>
-                    <p className='pokemonCard__stat'>
+                    </div>
+                    <div className='pokemonCard__stat'>
                         <div>Attack</div>
                         <div>{pokemon.stats[1].base_stat}</div>
-                    </p>
-                    <p className='pokemonCard__stat'>
+                    </div>
+                    <div className='pokemonCard__stat'>
                         <div>Defense</div>
                         <div>{pokemon.stats[2].base_stat}</div>
-                    </p>
-                    <p className='pokemonCard__stat'>
+                    </div>
+                    <div className='pokemonCard__stat'>
                         <div>Sp. Atk</div>
                         <div>{pokemon.stats[3].base_stat}</div>
-                    </p>
-                    <p className='pokemonCard__stat'>
+                    </div>
+                    <div className='pokemonCard__stat'>
                         <div>Sp. Def</div>
                         <div>{pokemon.stats[4].base_stat}</div>
-                    </p>
-                    <p className='pokemonCard__stat'>
+                    </div>
+                    <div className='pokemonCard__stat'>
                         <div>Speed</div>
                         <div>{pokemon.stats[5].base_stat}</div>
-                    </p>
+                    </div>
                 </div>
             </div>
             <Conditional condition={inventoryCard}>

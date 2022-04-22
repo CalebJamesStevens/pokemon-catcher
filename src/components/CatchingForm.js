@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToInventory } from '../redux/pokemonSlice';
+import { remove } from '../redux/wildPokemonSlice';
 import './CatchingForm.css';
 
 function CatchingForm({ pokemon, setCatching }) {
@@ -15,6 +16,7 @@ function CatchingForm({ pokemon, setCatching }) {
                 givenName: givenName.current.value,
             })
         );
+        dispatch(remove(0));
     };
 
     return (

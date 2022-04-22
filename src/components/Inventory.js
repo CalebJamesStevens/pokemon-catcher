@@ -22,10 +22,10 @@ function Inventory() {
                     </Link>
 
                     <ul className='inventory__pokemonList'>
-                        {pokemonList.map((pokemon) => {
+                        {pokemonList.map((pokemon, i) => {
                             return (
                                 <PokemonTile
-                                    key={Math.random()}
+                                    key={i}
                                     inventoryCard={true}
                                     pokemon={pokemon}
                                 />
