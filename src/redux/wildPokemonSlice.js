@@ -9,9 +9,9 @@ export const wildPokemonSlice = createSlice({
     name: 'wildPokemon',
     initialState,
     reducers: {
-        remove: (state, index = 0) => {
+        remove: (state, action) => {
             if (state.wildPokemonList.length <= 0) return;
-            state.wildPokemonList.splice(index, 1);
+            state.wildPokemonList.splice(action.payload, 1);
         },
         generate: (state, action) => {
             state.wildPokemonList = action.payload;

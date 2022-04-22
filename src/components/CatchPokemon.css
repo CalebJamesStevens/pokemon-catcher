@@ -4,6 +4,18 @@
     align-items: center;
 }
 
+.catchPokemon__reloadButton {
+    background-color: transparent;
+    color: white;
+    border: none;
+    transition: 1s;
+}
+
+.catchPokemon__reloadButton:hover,
+.catchPokemon__reloadButton:focus {
+    transform: rotate(720deg);
+}
+
 .catchPokemon__pokemonTilesContainer {
     display: flex;
     flex-direction: column;

@@ -15,18 +15,22 @@ function PokemonTile({ pokemon, inventoryCard }) {
                     setSelected={setSelected}
                 />
             </Conditional>
-            <li
-                onClick={() => {
-                    setSelected(true);
-                }}
-                className='pokemonTile'
-            >
-                <h3>{pokemon.name}</h3>
-                <img
-                    width={96}
-                    height={96}
-                    src={`${pokemon.sprites.front_default}`}
-                />
+            <li>
+                <button
+                    type='button'
+                    onClick={() => {
+                        setSelected(true);
+                    }}
+                    className='pokemonTile'
+                >
+                    <h3>{pokemon.name}</h3>
+                    <img
+                        width={96}
+                        height={96}
+                        src={`${pokemon.sprites.front_default}`}
+                        alt={`Image of ${pokemon.name}`}
+                    />
+                </button>
             </li>
         </>
     );

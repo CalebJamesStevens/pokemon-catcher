@@ -101,6 +101,14 @@
     font-weight: bolder;
     padding: 0.4rem 1.2rem;
     text-align: center;
+    transition: 250ms;
+}
+
+.pokemonCard__closeButton:hover,
+.pokemonCard__catchButton:hover,
+.pokemonCard__closeButton:focus,
+.pokemonCard__catchButton:focus {
+    scale: 1.1;
 }
 
 .pokemonCard__closeButton {

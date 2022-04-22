@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToInventory } from '../redux/pokemonSlice';
 import Conditional from '../utility_components/Conditional';
 import CatchingForm from './CatchingForm';
 import './PokemonCard.css';
 
 function PokemonCard({ pokemon, setSelected, inventoryCard }) {
     const [catching, setCatching] = useState(false);
+    const closeButton = useRef();
 
-    const { pokemonList } = useSelector((state) => state.pokemon);
+    useEffect(() => {
+        if (!closeButton.current) return;
+        closeButton.current.focus();
+    }, []);
 
     return (
         <section className='pokemonCard__background'>
@@ -63,6 +65,7 @@ function PokemonCard({ pokemon, setSelected, inventoryCard }) {
             <Conditional condition={inventoryCard}>
                 <div className='pokemonCard__buttonsContainer'>
                     <button
+                        ref={closeButton}
                         className='pokemonCard__closeButton'
                         onClick={(e) => {
                             e.stopPropagation();
@@ -77,6 +80,7 @@ function PokemonCard({ pokemon, setSelected, inventoryCard }) {
                 <div className='pokemonCard__buttonsContainer'>
                     <Conditional condition={!catching}>
                         <button
+                            ref={closeButton}
                             className='pokemonCard__closeButton'
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -97,7 +101,11 @@ function PokemonCard({ pokemon, setSelected, inventoryCard }) {
                 </div>
             </Conditional>
             <Conditional condition={catching}>
-                <CatchingForm pokemon={pokemon} setCatching={setCatching} />
+                <CatchingForm
+                    pokemon={pokemon}
+                    setSelected={setSelected}
+                    setCatching={setCatching}
+                />
             </Conditional>
         </section>
     );

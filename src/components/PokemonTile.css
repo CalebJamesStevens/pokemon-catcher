@@ -10,10 +10,26 @@
     width: 10rem;
     height: 12rem;
     transition: 250ms;
+    animation: popin 400ms;
 }
 
-.pokemonTile:hover {
+.pokemonTile:hover,
+.pokemonTile:focus {
     cursor: pointer;
     border: white 0.3rem solid;
     scale: 1.1;
+}
+
+@keyframes popin {
+    0% {
+        transform: scale(0%);
+    }
+
+    60% {
+        transform: scale(105%);
+    }
+
+    100% {
+        transform: scale(100%);
+    }
 }

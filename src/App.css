@@ -17,11 +17,9 @@ a {
 
 button {
     cursor: pointer;
-    transition: 250ms;
-}
-
-button:hover {
-    scale: 1.1;
+    background-color: transparent;
+    border: none;
+    color: inherit;
 }
 
 .button-1 {

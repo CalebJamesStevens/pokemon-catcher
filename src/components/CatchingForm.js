@@ -1,12 +1,14 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { useDispatch } from 'react-redux';
+import { PokemonContext } from '../contexts/PokemonContext';
 import { addToInventory } from '../redux/pokemonSlice';
 import { remove } from '../redux/wildPokemonSlice';
 import './CatchingForm.css';
 
-function CatchingForm({ pokemon, setCatching }) {
+function CatchingForm({ pokemon, setCatching, setSelected }) {
     const givenName = useRef();
     const dispatch = useDispatch();
+    const { index } = useContext(PokemonContext);
 
     const handleSubmit = () => {
         if (givenName.current.value.length <= 0) return;
@@ -16,7 +18,10 @@ function CatchingForm({ pokemon, setCatching }) {
                 givenName: givenName.current.value,
             })
         );
-        dispatch(remove(0));
+        console.log(index);
+        dispatch(remove(index));
+        setSelected(false);
+        setCatching(false);
     };
 
     return (
