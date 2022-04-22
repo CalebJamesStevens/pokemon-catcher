@@ -1,22 +1,16 @@
-.catchPokemon {
+#inventory-page {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.catchPokemon__pokemonTilesContainer {
+.inventory-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1600px;
-    padding-inline: 8px;
-}
-.catchPokemon__pokemonTilesContainerHeader {
-    text-align: center;
-    font-size: large;
 }
 
-.catchPokemon__pokemonTiles {
+#inventory-list {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
