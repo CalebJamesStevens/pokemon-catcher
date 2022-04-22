@@ -22,7 +22,11 @@ function PokemonTile({ pokemon, inventoryCard }) {
                 className='pokemonTile'
             >
                 <h3>{pokemon.name}</h3>
-                <img src={`${pokemon.sprites.front_default}`} />
+                <img
+                    width={96}
+                    height={96}
+                    src={`${pokemon.sprites.front_default}`}
+                />
             </li>
         </>
     );

@@ -1,0 +1,60 @@
+.catchingForm {
+    position: absolute;
+    top: auto;
+    left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    color: white;
+    background-color: rgba(40, 44, 52);
+    border-radius: 5px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    padding: 1rem 1rem;
+    animation-name: popup;
+    animation-duration: 250ms;
+}
+
+@keyframes popup {
+    from {
+        transform: scale(0%);
+    }
+
+    to {
+        transform: scale(100%);
+    }
+}
+
+.catchingForm__nameInput {
+    color: white;
+    border: 2px white solid;
+    background-color: transparent;
+    border-radius: 10px;
+    padding-block: 0.2rem;
+    margin-block: 1rem;
+    text-align: center;
+}
+
+.catchingForm__buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.catchingForm__cancelButton,
+.catchingForm__submitButton {
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    padding: 0.4rem 1.2rem;
+}
+
+.catchingForm__cancelButton {
+    background-color: #ad1e05;
+}
+
+.catchingForm__submitButton {
+    background-color: #006810;
+}

@@ -2,13 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToInventory } from '../redux/pokemonSlice';
 import Conditional from '../utility_components/Conditional';
+import CatchingForm from './CatchingForm';
 import './PokemonCard.css';
 
 function PokemonCard({ pokemon, setSelected, inventoryCard }) {
     const [catching, setCatching] = useState(false);
-    const givenName = useRef();
 
-    const dispatch = useDispatch();
     const { pokemonList } = useSelector((state) => state.pokemon);
 
     return (
@@ -74,7 +73,7 @@ function PokemonCard({ pokemon, setSelected, inventoryCard }) {
                     </button>
                 </div>
             </Conditional>
-            <Conditional condition={!inventoryCard}>
+            <Conditional condition={!inventoryCard && !catching}>
                 <div className='pokemonCard__buttonsContainer'>
                     <button
                         className='pokemonCard__closeButton'
@@ -94,40 +93,9 @@ function PokemonCard({ pokemon, setSelected, inventoryCard }) {
                         Catch 'Em!
                     </button>
                 </div>
-                <Conditional condition={catching}>
-                    <form id='catch-form'>
-                        <p>Name your pokemon!</p>
-                        <label>
-                            <input ref={givenName} name='name' type={'text'} />
-                        </label>
-                        <div>
-                            <label>
-                                <button
-                                    onClick={() => {
-                                        dispatch(
-                                            addToInventory({
-                                                ...pokemon,
-                                                givenName:
-                                                    givenName.current.value,
-                                            })
-                                        );
-                                    }}
-                                >
-                                    Submit
-                                </button>
-                            </label>
-                            <label>
-                                <button
-                                    onClick={() => {
-                                        setCatching(false);
-                                    }}
-                                >
-                                    Cancel
-                                </button>
-                            </label>
-                        </div>
-                    </form>
-                </Conditional>
+            </Conditional>
+            <Conditional condition={catching}>
+                <CatchingForm pokemon={pokemon} setCatching={setCatching} />
             </Conditional>
         </section>
     );

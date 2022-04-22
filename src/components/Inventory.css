@@ -1,16 +1,16 @@
-#inventory-page {
+.inventory {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.inventory-container {
+.inventory__pokemonContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#inventory-list {
+.inventoryPokemon {
     display: flex;
     width: 100%;
     flex-wrap: wrap;

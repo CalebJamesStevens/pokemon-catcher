@@ -19,11 +19,11 @@
 
 .navbar__menu {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .navbar__menuItem {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.7rem;
 }

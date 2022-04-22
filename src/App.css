@@ -61,38 +61,3 @@ nav {
 .darkbg-link {
     text-decoration: underline;
 }
-
-#inventory-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.inventory-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#inventory-list {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-}
-
-#catch-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 15rem;
-    color: white;
-    background-color: #282c34;
-    outline: gray solid 1rem;
-    padding: 1rem 1rem;
-    position: absolute;
-    top: auto;
-    left: auto;
-}
