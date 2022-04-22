@@ -73,25 +73,27 @@ function PokemonCard({ pokemon, setSelected, inventoryCard }) {
                     </button>
                 </div>
             </Conditional>
-            <Conditional condition={!inventoryCard && !catching}>
+            <Conditional condition={!inventoryCard}>
                 <div className='pokemonCard__buttonsContainer'>
-                    <button
-                        className='pokemonCard__closeButton'
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setSelected(false);
-                        }}
-                    >
-                        No Thanks!
-                    </button>
-                    <button
-                        className='pokemonCard__catchButton'
-                        onClick={() => {
-                            setCatching(true);
-                        }}
-                    >
-                        Catch 'Em!
-                    </button>
+                    <Conditional condition={!catching}>
+                        <button
+                            className='pokemonCard__closeButton'
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setSelected(false);
+                            }}
+                        >
+                            No Thanks!
+                        </button>
+                        <button
+                            className='pokemonCard__catchButton'
+                            onClick={() => {
+                                setCatching(true);
+                            }}
+                        >
+                            Catch 'Em!
+                        </button>
+                    </Conditional>
                 </div>
             </Conditional>
             <Conditional condition={catching}>
