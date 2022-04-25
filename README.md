@@ -4,6 +4,10 @@ Pokemon Catcher
 
 A simple application where a user can catch and name pokemon, built with React, Redux, JS, JSX, and CSS.
 
+### How to use
+
+![Gif](https://media.giphy.com/media/abwDWGjA9uxXDtU8eI/giphy.gif)
+
 # Tools Used
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), [Redux](https://redux.js.org/) was used for state management, and local storage was used for storing data.
