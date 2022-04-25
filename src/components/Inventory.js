@@ -7,7 +7,7 @@ function Inventory() {
     const { pokemonList } = useSelector((state) => state.pokemon);
 
     return (
-        <main className='inventory'>
+        <main data-testid='inventory' className='inventory'>
             <h1 className='hidden'>Inventory Page</h1>
             <section
                 aria-labelledby='inventory__pokemonContainerHeader'
@@ -24,7 +24,11 @@ function Inventory() {
                     <label htmlFor='pokemonList' className=''>
                         Pokemon List
                     </label>
-                    <ul id='pokemonList' className='inventory__pokemonList'>
+                    <ul
+                        data-testid='inventory__pokemonList'
+                        id='pokemonList'
+                        className='inventory__pokemonList'
+                    >
                         {pokemonList.map((pokemon, i) => {
                             return (
                                 <PokemonTile

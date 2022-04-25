@@ -22,20 +22,6 @@ button {
     color: inherit;
 }
 
-.button-1 {
-    background-color: #90ee90;
-    border: black solid 2px;
-}
-
-.button-1:hover {
-    background-color: #41bd41;
-}
-
-.button-2 {
-    background-color: lightcoral;
-    border: black solid 2px;
-}
-
 li {
     margin: 0;
     list-style: none;

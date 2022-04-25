@@ -10,9 +10,9 @@ import { PokemonContext } from '../contexts/PokemonContext';
 function CatchPokemon() {
     const dispatch = useDispatch();
     const { wildPokemonList } = useSelector((state) => state.wildPokemon);
+
     const fetchPokemon = async () => {
         const p = await fetchRandomPokemon(10);
-
         dispatch(generate(p));
     };
 
@@ -22,7 +22,7 @@ function CatchPokemon() {
     }, []);
 
     return (
-        <main className='catchPokemon'>
+        <main data-testid='catchPokemon' className='catchPokemon'>
             <h1 className='hidden'>Catch Pokemon Page</h1>
             <section
                 aria-labelledby='catchPokemon__pokemonTilesContainerHeader'
@@ -45,7 +45,10 @@ function CatchPokemon() {
                 >
                     <AiOutlineReload size={50} />
                 </button>
-                <ul className='catchPokemon__pokemonTiles'>
+                <ul
+                    data-testid='catchPokemon__pokemonTiles'
+                    className='catchPokemon__pokemonTiles'
+                >
                     {wildPokemonList?.map((pokemon, index) => {
                         return (
                             <PokemonContext.Provider

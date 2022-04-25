@@ -3,25 +3,36 @@ import Conditional from '../utility_components/Conditional';
 import CatchingForm from './CatchingForm';
 import './PokemonCard.css';
 
-function PokemonCard({ pokemon, setSelected, inventoryCard }) {
+function PokemonCard({ pokemon, setSelected, inventoryCard, setFocus }) {
     const [catching, setCatching] = useState(false);
     const closeButton = useRef();
 
     useEffect(() => {
-        if (!closeButton.current) return;
+        if (!closeButton.current || !setFocus) return;
         closeButton.current.focus();
     }, []);
 
     return (
-        <section className='pokemonCard__background'>
-            <div className='pokemonCard popup'>
+        <section
+            data-testid='pokemonCard__background'
+            className='pokemonCard__background'
+        >
+            <div data-testid='pokemonCard' className='pokemonCard popup'>
                 <div className='pokemonCard__nameContainer'>
                     <Conditional condition={inventoryCard}>
-                        <p className='pokemonCard__givenName'>
+                        <p
+                            data-testid='pokemonCard__givenName'
+                            className='pokemonCard__givenName'
+                        >
                             "{pokemon.givenName}"
                         </p>
                     </Conditional>
-                    <p className='pokemonCard__name'>{pokemon.name}</p>
+                    <p
+                        data-testid='pokemonCard__name'
+                        className='pokemonCard__name'
+                    >
+                        {pokemon.name}
+                    </p>
                 </div>
                 <img
                     className='pokemonCard__image'
@@ -66,6 +77,7 @@ function PokemonCard({ pokemon, setSelected, inventoryCard }) {
                 <div className='pokemonCard__buttonsContainer'>
                     <button
                         ref={closeButton}
+                        data-testid='pokemonCard__closeButton'
                         className='pokemonCard__closeButton'
                         onClick={(e) => {
                             e.stopPropagation();
@@ -81,15 +93,17 @@ function PokemonCard({ pokemon, setSelected, inventoryCard }) {
                     <Conditional condition={!catching}>
                         <button
                             ref={closeButton}
+                            data-testid='pokemonCard__closeButton'
                             className='pokemonCard__closeButton'
                             onClick={(e) => {
                                 e.stopPropagation();
                                 setSelected(false);
                             }}
                         >
-                            No Thanks!
+                            Run!
                         </button>
                         <button
+                            data-testid='pokemonCard__catchButton'
                             className='pokemonCard__catchButton'
                             onClick={() => {
                                 setCatching(true);
