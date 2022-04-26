@@ -34,7 +34,7 @@ To Run Test Suite:
 npm test
 ```
 
-To Start Server:
+To Start Application:
 
 ```
 npm start
@@ -65,12 +65,12 @@ Launches the test runner in the interactive watch mode.
 
 # Reflection
 
-This project was built in my free time over 3 days. Project goals included learning and using a new techonology (redux) as well as implemented technologies and concepts that I've learned up until this point.
+This project was built in my free time over 3 days. Project goals included learning and using a new techonology (redux) as well as implementing technologies and concepts that I've learned up until this point.
 
 The intended purpose of this project was to pull data from the PokeAPI and use that data to allow users to 'catch', name, and store the generated pokemon in an inventory system. I started by using `create-react-app` and then adding react-router and redux.
 
-The main challenge I faced in this project was writing the test suites. I spent a day watch and reading as much as I could on the `react-test-library`. In the future I would like to develop my understanding of writing tests with more complicated concepts such as testing Components based off of a redux store.
+The main challenge I faced in this project was writing the test suites. I spent a day watching and reading as much as I could on the `react-test-library`. In the future I would like to develop my understanding of writing tests with more complicated concepts such as testing Components based off of a redux store.
 
-If I were to develop this further something I would like to implement are a Node/Express backend with a simple PostgreSQL database to allow acount create and data shared between devices and browsers. I would also work hard and dive deeper into praticing accesibility so that anyone would be able to have fun and use the app as intended.
+If I were to develop this further something I would like to implement is a Node/Express backend with a simple PostgreSQL database to allow acount creation and data sharing between devices and browsers. I would also work harder and dive deeper into praticing accesibility so that anyone would be able to have fun and use the app as intended.
 
 All in all the technololiges implemented in this project are React, React-Router, Redux, and of course VanillaJS, JSX, and CSS.
